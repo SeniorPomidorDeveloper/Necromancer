@@ -1,1 +1,5 @@
+.vscode
+html
+src/libs/game/level/levelMap/test.cpp
+src/libs/game/level/levelMap/CMakeLists.txt
 *.bkp
