@@ -2,7 +2,7 @@
 #define LEVEL_MAP_HPP
 
 #include "libs/matrix/paths.hpp"
-#include "libs/cell/cell.hpp"
+#include "../cells/paths.hpp"
 
 class LevelMap final
 {

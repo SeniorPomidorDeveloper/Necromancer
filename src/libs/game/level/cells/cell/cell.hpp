@@ -2,22 +2,34 @@
 #define CELL_HPP
 
 #include <cstddef>
+#include <unordered_set>
+#include <string>
 
-typedef size_t Id;
+typedef size_t Id;;
 
-export class Cell
+class Cell
 {
     private:
         Id room_;
     
     public:
+        enum Type
+        {
+            Wall, Door, Avallable
+        };
+
         Cell(const Id &room);
-        virtual Cell *getClone() const;
-        
+
         void setRoom(const Id &room);
         Id getRoom() const;
 
+        virtual Type getType() const = 0;
+
+        virtual Cell *getClone() const = 0;
+
         virtual bool isEmpty() const;
+
+        virtual ~Cell();
 };
 
 #endif // CELL_HPP

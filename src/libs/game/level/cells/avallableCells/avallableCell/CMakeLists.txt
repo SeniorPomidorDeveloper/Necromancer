@@ -1,0 +1,1 @@
+add_library(avallableCellM avallableCell.cpp)

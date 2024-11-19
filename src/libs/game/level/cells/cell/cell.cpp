@@ -18,3 +18,7 @@ bool Cell::isEmpty() const
 {
     return false;
 }
+
+Cell::~Cell()
+{
+}

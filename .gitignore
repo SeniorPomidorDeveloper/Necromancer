@@ -1,5 +1,7 @@
 .vscode
 html
 src/libs/game/level/levelMap/test.cpp
-src/libs/game/level/levelMap/CMakeLists.txt
 *.bkp
+src/libs/game/level/test.cpp
+src/libs/game/level/CMakeLists.txt
+*build
