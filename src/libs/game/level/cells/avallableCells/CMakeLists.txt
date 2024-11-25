@@ -1,4 +1,0 @@
-add_subdirectory(avallableCell)
-add_subdirectory(doorCell)
-
-target_link_libraries(avallableCellM doorCellM)

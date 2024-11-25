@@ -1,0 +1,6 @@
+add_subdirectory(avallableCell)
+add_subdirectory(doorCell)
+add_subdirectory(essenceCell)
+add_subdirectory(lavaCell)
+
+target_link_libraries(avallableCellM doorCellM essenceCellM lavaCellM)

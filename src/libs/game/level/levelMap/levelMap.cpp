@@ -2,7 +2,7 @@
 
 LevelMap::LevelMap(const size_t width, const size_t height)
 {
-    setSize(width, height);
+    if (width != 1 && height != 1) setSize(width, height);
 }
 
 void LevelMap::setSize(const size_t width, const size_t height)
@@ -15,9 +15,9 @@ std::pair<size_t, size_t> LevelMap::getSize() const
     return cells_.get_size();
 }
 
-void LevelMap::setCell(const size_t x, const size_t y, const Cell &cell)
+void LevelMap::setCell(const size_t x, const size_t y, Cell *cell)
 {
-    cells_(x, y) = cell.getClone();
+    cells_(x, y) = cell;
 }
 
 Cell *LevelMap::getCell(const size_t x, const size_t y)

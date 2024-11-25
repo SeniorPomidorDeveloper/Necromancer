@@ -1,0 +1,1 @@
+add_library(entityM entity.cpp)

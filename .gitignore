@@ -1,7 +1,10 @@
-.vscode
+# Godot 4+ specific ignores
+.godot/
+/android/
 html
-src/libs/game/level/levelMap/test.cpp
-*.bkp
-src/libs/game/level/test.cpp
-src/libs/game/level/CMakeLists.txt
+.vscode
+*test.cpp
 *build
+icon.svg
+icon.svg.import
+project.godot
