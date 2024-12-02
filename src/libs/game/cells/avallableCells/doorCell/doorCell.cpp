@@ -2,13 +2,13 @@
 
 #include <iostream>
 
-DoorCell::DoorCell(const Id &room, const bool isOpened) : Cell(room), opened_(isOpened)
+DoorCell::DoorCell(const RoomId &room, const bool isOpened) : Cell(room), opened_(isOpened)
 {
 }
 
-Cell::Type DoorCell::getType() const
+std::set<std::string> DoorCell::getTags() const
 {
-    return Cell::Type::Door;
+    return {"Avallable", "Door"};
 }
 
 void DoorCell::open()

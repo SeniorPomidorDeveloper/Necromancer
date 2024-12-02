@@ -2,13 +2,13 @@
 
 #include <iostream>
 
-WallCell::WallCell(const Id &room) : Cell(room)
+WallCell::WallCell(const RoomId &room) : Cell(room)
 {
 }
 
-Cell::Type WallCell::getType() const
+std::set<std::string> WallCell::getTags() const
 {
-    return Cell::Type::Wall;
+    return {"Wall"};
 }
 
 Cell *WallCell::getClone() const

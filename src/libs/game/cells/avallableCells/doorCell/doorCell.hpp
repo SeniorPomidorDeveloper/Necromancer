@@ -11,9 +11,9 @@ class DoorCell : public Cell, IAvallableCell
         bool opened_ = false;
     
     public:
-        DoorCell(const Id &room, const bool isOpened = false);
+        DoorCell(const RoomId &room, const bool isOpened = false);
 
-        Type getType() const override final;
+        std::set<std::string> getTags() const override;
 
         bool isFree() const override;
         virtual void open();

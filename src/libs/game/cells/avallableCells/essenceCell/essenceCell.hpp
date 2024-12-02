@@ -10,7 +10,10 @@ class EssenceCell : public AvallableCell, IUsingEssence
         Essence essence_;
 
     public:
-        EssenceCell(const Id &room, const Essence &essence);
+        EssenceCell(const RoomId &room, const Essence &essence);
+
+        std::set<std::string> getTags() const override;
+
         bool giveEssence(IUsingEssence *user) override;
         Essence addEssence(const Essence &essence) override;
         void setEssence(const Essence &essence) override;

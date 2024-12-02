@@ -1,0 +1,1 @@
+add_library(managerAttackerSlotCellsM managerAttackerSlotCells.cpp)

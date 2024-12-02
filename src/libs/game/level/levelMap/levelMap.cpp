@@ -25,6 +25,16 @@ Cell *LevelMap::getCell(const size_t x, const size_t y)
     return cells_(x, y);
 }
 
+Matrix<Cell *>::iterator LevelMap::begin()
+{
+    return cells_.begin();
+}
+
+Matrix<Cell *>::iterator LevelMap::end()
+{
+    return cells_.end();
+}
+
 LevelMap::~LevelMap() noexcept
 {
     std::for_each(cells_.begin(), cells_.end(), [](Cell *&cell)

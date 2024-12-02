@@ -12,17 +12,17 @@ class Entity : public CellElement, IUsingHealth
     public:
         Entity(const Position &position, const Health &health);
 
-        bool canTakeDamage() const noexcept override;
+        bool canTakeDamage() const override;
 
-        void setHealth(const Health &health) noexcept override;
-        void addHealth(const HealthPoints &health) noexcept override;
+        void setHealth(const Health &health) override;
+        void addHealth(const HealthPoints &health) override;
         HealthPoints getHealth() const override;
-        void spendHealth(const HealthPoints &health) noexcept override;
-        bool takeDamage(const Damage &damage) noexcept override;
+        void spendHealth(const HealthPoints &health) override;
+        bool takeDamage(const Damage &damage) override;
 
-        virtual bool isLive() const noexcept;
-        virtual bool isDead() const noexcept;
-        virtual void die() noexcept;
+        virtual bool isLive() const;
+        virtual bool isDead() const;
+        virtual void die();
 };
 
 #endif // ENTITY_HPP

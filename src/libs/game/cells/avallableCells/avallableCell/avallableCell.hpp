@@ -10,14 +10,14 @@ class AvallableCell : public Cell, IAvallableCell
         CellElement *slot_ = nullptr;
         
     public:
-        AvallableCell(const Id &room);
+        AvallableCell(const RoomId &room);
 
         bool setSlot(CellElement *slot) override;
         CellElement &getSlot() override;
         CellElement *popSlot() override;
         bool isFree() const override;
 
-        Type getType() const override;
+        std::set<std::string> getTags() const override;
         Cell *getClone() const override;
         bool isEmpty() const override;
 };

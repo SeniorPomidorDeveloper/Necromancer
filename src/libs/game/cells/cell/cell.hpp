@@ -2,28 +2,27 @@
 #define CELL_HPP
 
 #include <cstddef>
-#include <unordered_set>
+#include <set>
 #include <string>
 
-typedef size_t Id;;
+typedef size_t RoomId;
+typedef size_t CellId;
 
 class Cell
 {
     private:
-        Id room_;
+        RoomId room_;
+        static inline CellId nextId_ = 0;
+        CellId id_;
     
     public:
-        enum Type
-        {
-            Wall, Door, Avallable
-        };
+        Cell(const RoomId &room);
 
-        Cell(const Id &room);
+        void setRoom(const RoomId &room);
+        RoomId getRoom() const;
 
-        void setRoom(const Id &room);
-        Id getRoom() const;
-
-        virtual Type getType() const = 0;
+        virtual std::set<std::string> getTags() const = 0;
+        CellId getId() const;
 
         virtual Cell *getClone() const = 0;
 

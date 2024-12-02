@@ -6,9 +6,9 @@
 class WallCell : public Cell
 {
     public:
-        WallCell(const Id &room);
+        WallCell(const RoomId &room);
 
-        Type getType() const override;
+        std::set<std::string> getTags() const override;
 
         Cell *getClone() const override;
 

@@ -1,15 +1,21 @@
 #include "cell.hpp"
 
-Cell::Cell(const Id &room) : room_(room)
+Cell::Cell(const RoomId &room) : room_(room)
 {
+    id_ = nextId_++;
 }
 
-void Cell::setRoom(const Id &room)
+CellId Cell::getId() const
+{
+    return id_;
+}
+
+void Cell::setRoom(const RoomId &room)
 {
     room_ = room;
 }
 
-Id Cell::getRoom() const
+RoomId Cell::getRoom() const
 {
     return room_;
 }

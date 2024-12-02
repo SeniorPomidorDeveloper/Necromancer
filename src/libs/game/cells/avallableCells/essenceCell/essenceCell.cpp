@@ -1,11 +1,21 @@
 #include "essenceCell.hpp"
 
-EssenceCell::EssenceCell(const Id &room, const Essence &essence) : AvallableCell(room), essence_(essence)
+#include <algorithm>
+
+EssenceCell::EssenceCell(const RoomId &room, const Essence &essence) : AvallableCell(room), essence_(essence)
 {
+}
+
+std::set<std::string> EssenceCell::getTags() const
+{
+    std::set<std::string> tags = AvallableCell::getTags();
+    tags.insert("Essence");
+    return tags;
 }
 
 bool EssenceCell::giveEssence(IUsingEssence *user)
 {
+    if (user == nullptr) return false;
     Essence lose_ess = user->addEssence(essence_);
     if (lose_ess == 0) return false;
     essence_ -= lose_ess;
@@ -16,11 +26,6 @@ Essence EssenceCell::addEssence(const Essence &essence)
 {
     essence_ += essence;
     return essence;
-}
-
-void EssenceCell::setEssence(const Essence &essence)
-{
-    essence_ = essence;
 }
 
 Essence EssenceCell::getEssence()

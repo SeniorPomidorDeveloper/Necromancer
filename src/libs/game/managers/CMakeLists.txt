@@ -1,0 +1,6 @@
+add_subdirectory(managerAllCells)
+add_subdirectory(managerAttackerSlotCells)
+
+add_library(managersM INTERFACE)
+
+target_link_libraries(managersM INTERFACE managerAllCellsM managerAttackerSlotCellsM)

@@ -19,7 +19,7 @@ class CellElement
         Position getPosition() const;
         const Position &getConstPosition() const;
 
-        virtual bool canTakeDamage() const;
+        virtual bool canTakeDamage() const = 0;
         size_t getId() const;
 
         virtual ~CellElement() = default;

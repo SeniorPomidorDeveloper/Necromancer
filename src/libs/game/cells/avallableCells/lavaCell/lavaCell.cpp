@@ -1,17 +1,21 @@
-#include "lavalCell.hpp"
+#include "lavaCell.hpp"
+
 #include "cellElements/entitys/entity/entity.hpp"
 
-LavaCell::LavaCell(const Id& root, const Damage &damage) : AvallableCell(root), damage_(damage)
+LavaCell::LavaCell(const RoomId& root, const Damage &damage) : AvallableCell(root), damage_(damage)
 {
 }
 
-bool LavaCell::giveDamage(IUsingHealth *enemy)
+std::set<std::string> LavaCell::getTags() const
 {
-    return enemy->takeDamage(damage_);
+    std::set<std::string> tags = AvallableCell::getTags();
+    tags.insert("AttackeSlot");
+    return tags;
 }
 
 bool LavaCell::giveDamage()
 {
+    if (slot_ == nullptr) return false;
     if (slot_->canTakeDamage()) return static_cast<Entity *>(slot_);
     return false;
 }

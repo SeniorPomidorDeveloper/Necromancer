@@ -31,6 +31,7 @@ void Entity::spendHealth(const HealthPoints &health)
 bool Entity::takeDamage(const Damage &damage)
 {
     spendHealth(damage.getValue());
+    return true;
 }
 
 bool Entity::isLive() const

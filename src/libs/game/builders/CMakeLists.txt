@@ -1,5 +1,6 @@
 add_subdirectory(builderLevelMap)
+add_subdirectory(builderLevel)
 
 add_library(buildersM INTERFACE)
 
-target_link_libraries(buildersM INTERFACE builderLevelMapM)
+target_link_libraries(buildersM INTERFACE builderLevelMapM builderLevelM)

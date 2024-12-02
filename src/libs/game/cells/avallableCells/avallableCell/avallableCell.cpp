@@ -1,6 +1,6 @@
 #include "avallableCell.hpp"
 
-AvallableCell::AvallableCell(const Id &room) : Cell(room)
+AvallableCell::AvallableCell(const RoomId &room) : Cell(room)
 {
 }
 
@@ -25,9 +25,9 @@ bool AvallableCell::isFree() const
     return slot_ == nullptr;
 }
 
-Cell::Type AvallableCell::getType() const
+std::set<std::string> AvallableCell::getTags() const
 {
-    return Cell::Type::Avallable;
+    return {"Avallable"};
 }
 
 Cell *AvallableCell::getClone() const

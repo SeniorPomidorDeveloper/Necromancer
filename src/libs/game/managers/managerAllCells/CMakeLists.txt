@@ -1,0 +1,1 @@
+add_library(managerAllCellsM managerAllCells.cpp)
